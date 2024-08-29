@@ -83,7 +83,7 @@ DATABASES = {
         'USER': 'postgres', #change it database user name
         'PASSWORD': '123', # change user database password
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '5000',
     }
 }
 
