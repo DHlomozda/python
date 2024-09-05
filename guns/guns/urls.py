@@ -19,6 +19,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('orders.urls')),  # Include your app's URLs
-    path('api/', include('sellable.urls')),  # Include your app's URLs
+    path('orders/', include('orders.urls')),  # Include your app's URLs
+    path('sellable/', include('sellable.urls')),  # Include your app's URLs
 ]

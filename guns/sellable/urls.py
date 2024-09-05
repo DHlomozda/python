@@ -1,13 +1,14 @@
+import django.http
 from django.urls import path
 
 from .views import *
 
 urlpatterns = [
 
-    path('sellable/', SellableListCreateView.as_view(), name='sellable-list-create'),
-    path('sellable/<int:pk>/', SellableDetailView.as_view(), name='sellable-detail'),
-    #path('sellable/all/', AllSellableListView.as_view(), name='all-sellable-list'),
-    path('sellable/all', all_sellable_list_view, name='all-sellable-list'),
-    path('sellable/delete/<int:pk>/', SellableDeleteView.as_view(), name='sellable-delete'),
-    path('sellable/update/<int:pk>/', SellableUpdateView.as_view(), name='sellable-update'),
+    #path('', SellableListCreateView.as_view(), name='sellable-list-create'),
+    path('<int:_id>/', sellable_list_create_view, name='sellable-list-create'),
+    path('<int:_id>/', sellable_detail_view, name='sellable-detail'),
+    path('all/', all_sellable_list_view, name='all-sellable-list'),
+    path('delete/<int:_id>/', sellable_delete_view, name='sellable-delete'),
+    path('update/<int:_id>/', sellable_update_view, name='sellable-update'),
 ]
